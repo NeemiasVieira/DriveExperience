@@ -8,6 +8,11 @@ min-height: 80vh;
     margin: 0;
 }
 
+.error{
+    color: #f33;
+    font-weight: 700;
+}
+
 section{
     margin-top: 50px;
     height: 80vh;

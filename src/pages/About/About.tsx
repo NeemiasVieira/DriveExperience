@@ -50,7 +50,7 @@ const About = () => {
             <h1>Cars Available</h1>
             <section>
                 <Car car={car1}/>   
-                <Car car={car2}/>            
+                <Car car={car2}/>                    
             </section>
         </AboutStyle>
         <Footer/>
