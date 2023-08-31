@@ -11,11 +11,7 @@ export interface CarType {
     fuelEfficiency: number;
     dailyRate: number;
     images: string[];
-    features: {
-      airConditioning: boolean;
-      powerWindows: boolean;
-      gpsNavigation: boolean;
-    };
+    features: string[]
   }
   
 export interface CarProps{

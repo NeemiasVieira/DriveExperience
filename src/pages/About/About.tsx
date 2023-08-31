@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AboutStyle } from "./AboutStyle"
 import { NavTab } from "../../components/NavTab/NavTab";
 import { Footer } from "../../components/Footer/Footer";
 import { Car } from "../../components/Car/Car";
 import { CarProps } from "../../components/Car/Car";
 import { CarType } from "../../components/Car/Car";
+import { executeListAvailableCars } from "../../assets/api/use-cases/cars/listAvailableCars";
 
 const car1: CarType = {
     model: "HB20 SPORT 1.0",
@@ -16,11 +17,7 @@ const car1: CarType = {
     fuelEfficiency: 30,
     dailyRate: 39.90,
     images: ["https://www.localiza.com/brasil-site/geral/Frota/HB2X.png", "imagem2.jpg"],
-    features: {
-      airConditioning: true,
-      powerWindows: true,
-      gpsNavigation: false,
-    }
+    features: ["ar"]
   };
 
   const car2: CarType = {
@@ -33,15 +30,24 @@ const car1: CarType = {
     fuelEfficiency: 12,
     dailyRate: 49.90,
     images: ["https://www.localiza.com/brasil-site/geral/Frota/ONIX.png", "imagem2.jpg"],
-    features: {
-      airConditioning: true,
-      powerWindows: true,
-      gpsNavigation: false,
-    }
+    features: ["ar"]
   };
   
 
 const About = () => {
+
+  const [response, setResponse] = useState();
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    console.log(response);
+  }, [response]);
+
+  const execute = async(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    await executeListAvailableCars(setResponse, setError);
+    if(error) console.log(error);
+  }
+
     return(
         <>
         
@@ -50,8 +56,10 @@ const About = () => {
             <h1>Cars Available</h1>
             <section>
                 <Car car={car1}/>   
-                <Car car={car2}/>                    
+                <Car car={car2}/> 
             </section>
+                <button onClick={async(e) => execute(e)}>Chamar API</button>                   
+            
         </AboutStyle>
         <Footer/>
 
