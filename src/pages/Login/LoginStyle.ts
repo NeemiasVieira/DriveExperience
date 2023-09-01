@@ -13,7 +13,7 @@ export const LoginStyle = styled.main`
   }
 
   section {
-    margin-top: 50px;
+    margin: 100px 0 50px 0;
     height: 67.5vh;
     display: flex;
     justify-content: center;

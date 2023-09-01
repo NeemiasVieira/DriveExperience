@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { CarsNotAuthenticatedStyle } from "./CarsNotAuthenticatedStyle";
-import { NavTab } from "../../components/NavTab/NavTab";
-import { Footer } from "../../components/Footer/Footer";
-import { Car } from "../../components/Car/Car";
-import { CarType } from "../../components/Car/Car";
+import { CreateCarStyle } from "./CreateReserveStyle";
+import { NavTabPrivatePages } from "../../../components/NavTabPrivatePages/NavTabPrivatePages";
+import { Footer } from "../../../components/Footer/Footer";
+import { Car } from "../../../components/Car/Car";
+import { CarType } from "../../../components/Car/Car";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { executeListAvailableCars } from "../../assets/api/use-cases/cars/listAvailableCars";
+import { executeListAvailableCars } from "../../../assets/api/use-cases/cars/listAvailableCars";
 
-const CarsNotAuthenticated = () => {
+const CreateCar = () => {
   const [response, setResponse] = useState([]);
   const [error, setError] = useState();
   const [cars, setCars] = useState<CarType[]>([]);
@@ -88,8 +88,8 @@ const CarsNotAuthenticated = () => {
 
   return (
     <>
-      <NavTab />
-      <CarsNotAuthenticatedStyle>
+      <NavTabPrivatePages />
+      <CreateCarStyle>
         <div className="DivInputs">
           <div className="DivSearch">
             <input type="text" id="search" placeholder="Type a car" />
@@ -131,10 +131,10 @@ const CarsNotAuthenticated = () => {
             )}
           </div>
         </section>
-      </CarsNotAuthenticatedStyle>
+      </CreateCarStyle>
       <Footer />
     </>
   );
 };
 
-export default CarsNotAuthenticated;
+export default CreateCar;
