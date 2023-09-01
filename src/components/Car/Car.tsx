@@ -1,7 +1,9 @@
 import React from "react"
 import { CarStyle } from "./CarStyle"
+import { Link } from "react-router-dom";
 
 export interface CarType {
+    id: number;
     model: string;
     plateNumber: string;
     year: number;
@@ -15,28 +17,32 @@ export interface CarType {
   }
   
 export interface CarProps{
-    car: CarType
+    car: CarType,
+    isAuthenticated: boolean
 }
 
-export const Car: React.FC<CarProps> = (car: CarProps) => {
+export const Car: React.FC<CarProps> = (props: CarProps) => {   
+    
     return (
         <CarStyle>
-            <h2>{car.car.model}</h2>
-            <img src={car.car.images[0]} alt="Car's images" />
+            <h2>{props.car.model}</h2>
+            <img src={props.car.images[0]} alt="Car's images" />
             <div className="carDescription">
-                <p><strong>Year: </strong>{car.car.year}</p>
-                <p><strong>Plate-Number: </strong>{car.car.plateNumber}</p>
+                <p><strong>Year: </strong>{props.car.year}</p>
+                <p><strong>Plate-Number: </strong>{props.car.plateNumber}</p>
             </div>
             <div className="carDescription">
-            <p><strong>Transmission: </strong>{car.car.isAutomatic? "Automatic" : "Manual"}</p>
-            <p><strong>Type: </strong>{car.car.carType}</p>
+            <p><strong>Transmission: </strong>{props.car.isAutomatic? "Automatic" : "Manual"}</p>
+            <p><strong>Type: </strong>{props.car.carType}</p>
             </div>
             <div className="carDescription">
-            <p><strong>Fuel Efficiency: </strong>{car.car.fuelEfficiency} Km/L</p>
+            <p><strong>Fuel Efficiency: </strong>{props.car.fuelEfficiency} Km/L</p>
             </div>
             <p><strong>Features: </strong>Air Conditioning, GPS Navigation</p>
-            <h3>${car.car.dailyRate.toFixed(2)} per day</h3>
-            <button>Rent now</button>
+            <h3>${props.car.dailyRate.toFixed(2)} per day</h3>
+            {!props.isAuthenticated && <Link to="/login" className="reserveNowNoAuthenticated">Reserve Now</Link>}
+            {props.isAuthenticated && <button>Rent now</button>}
+            
 
         </CarStyle>
     )

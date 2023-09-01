@@ -4,13 +4,11 @@ export const CarStyle = styled.div`
 
 display: flex;
 justify-content: center;
-/* align-items: center; */
 flex-flow: column wrap;
 gap: 5px;
-margin-bottom: 100px;
+margin-bottom: 25px;
 padding: 20px;
 border: solid #000 1px;
-/* border-radius:  0px 25px 0px 25px; */
 border-radius: 10px;
 
 p{
@@ -49,6 +47,27 @@ h3{
     align-items: center;
     flex-flow: row nowrap;
     gap: 10px;
+}
+
+.reserveNowNoAuthenticated{
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    border: solid #000 1px;
+    border-radius: 5px;
+    height: 25px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    transition: all 200ms;
+    cursor: pointer;
+    align-self: center;
+}
+
+.reserveNowNoAuthenticated:hover{
+    transform: scale(1.1);
 }
 
 button{

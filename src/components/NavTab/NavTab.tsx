@@ -9,7 +9,7 @@ export const NavTab = () => {
                 <ul>
                     <div className="navDiv">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/cars">Cars</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                     </div>
                     <li className="loginButton"><Link to="/login">Login</Link></li>
