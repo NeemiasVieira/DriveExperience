@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/DriveExperience/static/css/main.e6f624ef.css",
-    "main.js": "/DriveExperience/static/js/main.539de83a.js",
+    "main.css": "/DriveExperience/static/css/main.2e77dcf3.css",
+    "main.js": "/DriveExperience/static/js/main.99957834.js",
     "static/js/787.fccd14e6.chunk.js": "/DriveExperience/static/js/787.fccd14e6.chunk.js",
     "static/media/mercades-gla.jpg": "/DriveExperience/static/media/mercades-gla.80e317ee563c406ae7a7.jpg",
     "static/media/imageHome.jpg": "/DriveExperience/static/media/imageHome.6986068c867b9905b393.jpg",
     "index.html": "/DriveExperience/index.html",
-    "main.e6f624ef.css.map": "/DriveExperience/static/css/main.e6f624ef.css.map",
-    "main.539de83a.js.map": "/DriveExperience/static/js/main.539de83a.js.map",
+    "main.2e77dcf3.css.map": "/DriveExperience/static/css/main.2e77dcf3.css.map",
+    "main.99957834.js.map": "/DriveExperience/static/js/main.99957834.js.map",
     "787.fccd14e6.chunk.js.map": "/DriveExperience/static/js/787.fccd14e6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6f624ef.css",
-    "static/js/main.539de83a.js"
+    "static/css/main.2e77dcf3.css",
+    "static/js/main.99957834.js"
   ]
 }
