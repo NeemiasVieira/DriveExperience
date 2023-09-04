@@ -1,9 +1,6 @@
 import api from '../../config';
 
-const headers = {
-  Authorization: `Bearer ${sessionStorage.getItem('token')}`,
-  'Content-Type': 'application/json',
-};
+
 
 export const executeCreateReserve = async (
   carId: number,
@@ -12,6 +9,10 @@ export const executeCreateReserve = async (
   setResponse: React.Dispatch<React.SetStateAction<any>>,
   setError: React.Dispatch<React.SetStateAction<any>>,
 ) => {
+  const headers = {
+    Authorization: `Bearer ${sessionStorage.getItem('token')}`,
+    'Content-Type': 'application/json',
+  };
   await api
     .post('/reserves/create', { carId, startDate, endDate }, { headers })
     .then((response) => setResponse(response))

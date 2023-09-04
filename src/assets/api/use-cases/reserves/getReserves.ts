@@ -1,16 +1,17 @@
 import api from "../../config";
 
-const config = {
-    headers: {
-        Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-    },
-};
+
 
 export const getReserves = async (
     setReserves: React.Dispatch<React.SetStateAction<any>>,
     setError: React.Dispatch<React.SetStateAction<any>>,
     setImages: React.Dispatch<React.SetStateAction<any>>
 ) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+    };
     try {
         const response = await api.get("/reserves", config);
         const reserves = response.data;
@@ -27,7 +28,6 @@ export const getReserves = async (
         );
 
         const images = carResponses.map((carResponse) => carResponse.data.images);
-
         setReserves(reserves);
         setImages(images.flat());
 

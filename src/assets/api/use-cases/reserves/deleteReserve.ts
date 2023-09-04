@@ -1,12 +1,12 @@
 import api from '../../config';
 
-const config = {
-  headers: {
-    Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-  },
-};
-
 export const deleteReserve = async (id: number) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+    },
+  };
+
   await api
     .delete(`/reserves/${id}`, config)
     .then((response) => {
