@@ -3,6 +3,7 @@ import { ReserveStyle } from "./ReserveStyle";
 import { useNavigate } from "react-router-dom";
 import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal";
 import { PrintReserveModal } from "../printReserveModal/printReserveModal";
+import { EditReserveModal } from "../EditReserveModal/EditReserveModal";
 
 export interface carPrint {
   carType: string;
@@ -93,7 +94,7 @@ export const Reserve: React.FC<ReserveProps> = (props: ReserveProps) => {
         >
           View Car
         </button>
-        <button>Edit Reserve</button>
+        <EditReserveModal reserveId={props.reserve.id} />
         <ConfirmDeleteModal
           reserveId={props.reserve.id}
           onRemove={props.onRemove}

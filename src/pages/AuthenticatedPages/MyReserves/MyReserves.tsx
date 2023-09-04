@@ -1,13 +1,10 @@
-import { Reserve } from '../../../components/Reserve/Reserve';
-import { MyReservesStyle } from './MyReservesStyle';
-import { Footer } from '../../../components/Footer/Footer';
-import { NavTabPrivatePages } from '../../../components/NavTabPrivatePages/NavTabPrivatePages';
-import { useState, useEffect } from 'react';
-import { getReserves } from '../../../assets/api/use-cases/reserves/getReserves';
-import { ReserveProps } from '../../../components/Reserve/Reserve';
-import { Loading } from '../../../components/Loading/Loading';
-import { findCarById } from '../../../assets/api/use-cases/cars/findCarById';
-import { carPrint } from '../../../components/Reserve/Reserve';
+import { Reserve } from "../../../components/Reserve/Reserve";
+import { MyReservesStyle } from "./MyReservesStyle";
+import { Footer } from "../../../components/Footer/Footer";
+import { NavTabPrivatePages } from "../../../components/NavTabPrivatePages/NavTabPrivatePages";
+import { useState, useEffect } from "react";
+import { getReserves } from "../../../assets/api/use-cases/reserves/getReserves";
+import { Loading } from "../../../components/Loading/Loading";
 
 const MyReserves = () => {
   const [reserves, setReserves] = useState<any>([]);
@@ -34,7 +31,7 @@ const MyReserves = () => {
       <NavTabPrivatePages />
       <MyReservesStyle>
         <h1>My Reserves</h1>
-        <div className='cars'>
+        <div className="cars">
           {isLoading ? (
             <Loading />
           ) : (

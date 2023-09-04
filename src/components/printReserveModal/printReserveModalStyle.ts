@@ -141,16 +141,22 @@ export const PrintReserveModalStyle = styled.div`
 export const OpenModalButton = styled.button`
 
     background-color: #fff;
-      border: solid #000 1px;
       cursor: pointer;
       font-size: 1rem;
       padding: 3px 15px;
-      border-radius: 0 10px 0 10px;
+      border: none;
       font-weight: 700;
       transition: all 200ms;
+      align-self: flex-end;
 
-:hover{color: #f33;
-      transform: scale(1.1);}
+      svg{
+        font-size: 2rem;
+      }
+
+      :hover{
+        color: #f33;
+        
+      }
     
 
 

@@ -7,6 +7,7 @@ import { CarType } from "../Car/Car";
 import { findCarById } from "../../assets/api/use-cases/cars/findCarById";
 import Logo from "../../assets/imgs/Logo.png";
 import { OpenModalButton } from "./printReserveModalStyle";
+import { faPrint } from "@fortawesome/free-solid-svg-icons";
 
 interface PrintReserveModalProps {
   message: string;
@@ -69,7 +70,7 @@ export const PrintReserveModal: React.FC<PrintReserveModalProps> = (
   return (
     <>
       <OpenModalButton onClick={openModal} className="openModal">
-        Open Modal
+        <FontAwesomeIcon icon={faPrint} />
       </OpenModalButton>
       <Modal
         isOpen={isModalOpen}
