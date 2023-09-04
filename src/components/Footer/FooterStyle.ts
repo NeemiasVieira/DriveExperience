@@ -95,4 +95,8 @@ export const FooterStyle = styled.footer`
   svg {
     font-size: 2rem;
   }
+
+  @media print {
+    display: none;
+  }
 `;

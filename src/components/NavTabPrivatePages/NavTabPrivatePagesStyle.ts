@@ -57,4 +57,8 @@ export const NavTabPrivatePagesStyle = styled.header`
     flex-flow: row nowrap;
     gap: 50px;
   }
+
+  @media print {
+    display: none;
+  }
 `;

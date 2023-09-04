@@ -14,15 +14,18 @@ const customStyles = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     borderRadius: '15px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '500px',
+    height: '300px',
   },
 };
 
 interface ErrorModalProps {
   messages: string[] | string | AxiosError | React.Dispatch<any>;
-  error: ErrorType;
+  error?: ErrorType;
 }
-
-const elements = ['Type a password', 'Type an e=mail'];
 
 export const ErrorModal: React.FC<ErrorModalProps> = (
   props: ErrorModalProps,

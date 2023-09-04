@@ -1,23 +1,30 @@
-import { Reserve } from "../../../components/Reserve/Reserve";
-import { MyReservesStyle } from "./MyReservesStyle";
-import { Footer } from "../../../components/Footer/Footer";
-import { NavTabPrivatePages } from "../../../components/NavTabPrivatePages/NavTabPrivatePages";
-import { useState, useEffect } from "react";
-import { getReserves } from "../../../assets/api/use-cases/reserves/getReserves";
-import { ReserveProps } from "../../../components/Reserve/Reserve";
-import { Loading } from "../../../components/Loading/Loading";
+import { Reserve } from '../../../components/Reserve/Reserve';
+import { MyReservesStyle } from './MyReservesStyle';
+import { Footer } from '../../../components/Footer/Footer';
+import { NavTabPrivatePages } from '../../../components/NavTabPrivatePages/NavTabPrivatePages';
+import { useState, useEffect } from 'react';
+import { getReserves } from '../../../assets/api/use-cases/reserves/getReserves';
+import { ReserveProps } from '../../../components/Reserve/Reserve';
+import { Loading } from '../../../components/Loading/Loading';
+import { findCarById } from '../../../assets/api/use-cases/cars/findCarById';
+import { carPrint } from '../../../components/Reserve/Reserve';
 
 const MyReserves = () => {
   const [reserves, setReserves] = useState<any>([]);
   const [error, setError] = useState();
   const [images, setImages] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [printReserveid, setPrintReserveId] = useState<Number>();
+
+  const removeReserve = () => {
+    getReserves(setReserves, setError, setImages);
+  };
 
   useEffect(() => {
     getReserves(setReserves, setError, setImages);
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 2000);
   }, []);
 
   useEffect(() => {}, [reserves]);
@@ -27,7 +34,7 @@ const MyReserves = () => {
       <NavTabPrivatePages />
       <MyReservesStyle>
         <h1>My Reserves</h1>
-        <div className="cars">
+        <div className='cars'>
           {isLoading ? (
             <Loading />
           ) : (
@@ -36,6 +43,7 @@ const MyReserves = () => {
                 key={reserve.id}
                 reserve={reserve}
                 image={images[index]}
+                onRemove={() => removeReserve()}
               />
             ))
           )}

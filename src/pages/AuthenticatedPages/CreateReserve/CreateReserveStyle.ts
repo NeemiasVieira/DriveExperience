@@ -72,6 +72,7 @@ export const CreateCarStyle = styled.main`
 
   .CarsDiv {
     display: flex;
+    justify-content: center;
     flex-flow: row wrap;
     gap: 30px;
   }

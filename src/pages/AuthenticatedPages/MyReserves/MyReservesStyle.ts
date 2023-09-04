@@ -7,12 +7,18 @@ export const MyReservesStyle = styled.main`
   min-height: 71.5vh;
   margin-top: 50px;
 
-  .cars{
+  .cars {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
     flex-flow: column wrap;
     margin-bottom: 50px;
+  }
+
+  @media print {
+    * {
+      display: none;
+    }
   }
 `;

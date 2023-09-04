@@ -1,6 +1,6 @@
-import { NavTabPrivatePagesStyle } from "./NavTabPrivatePagesStyle";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { NavTabPrivatePagesStyle } from './NavTabPrivatePagesStyle';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const NavTabPrivatePages = () => {
   const navigate = useNavigate();
@@ -9,22 +9,22 @@ export const NavTabPrivatePages = () => {
     <NavTabPrivatePagesStyle>
       <nav>
         <ul>
-          <div className="navDiv">
+          <div className='navDiv'>
             <li>
-              <Link to="/myreserves">My reserves</Link>
+              <Link to='/myreserves'>My reserves</Link>
             </li>
             <li>
-              <Link to="/myreserves">Reserve a Car</Link>
+              <Link to='/create-reserve'>Reserve a Car</Link>
             </li>
           </div>
-          <li className="loginButton">
+          <li className='loginButton'>
             <button
               onClick={(e) => {
                 e.preventDefault();
-                sessionStorage.removeItem("token");
-                navigate("/");
+                sessionStorage.removeItem('token');
+                navigate('/');
               }}
-              className="logoutButton"
+              className='logoutButton'
             >
               Logout
             </button>
