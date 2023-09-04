@@ -1,4 +1,3 @@
-import { CarType } from "../../../../components/Car/Car";
 import api from "../../config";
 
 const config = {
@@ -30,7 +29,7 @@ export const getReserves = async (
         const images = carResponses.map((carResponse) => carResponse.data.images);
 
         setReserves(reserves);
-        setImages(images.flat()); // Use .flat() para achatar o array de arrays de imagens
+        setImages(images.flat());
 
     } catch (error) {
         console.error(error);

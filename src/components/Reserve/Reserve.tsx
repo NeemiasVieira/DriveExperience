@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { ReserveStyle } from './ReserveStyle';
-import { useNavigate } from 'react-router-dom';
-import ConfirmDeleteModal from '../ConfirmDeleteModal/ConfirmDeleteModal';
-import { PrintReserveModal } from '../printReserveModal/printReserveModal';
+import React, { useEffect, useState } from "react";
+import { ReserveStyle } from "./ReserveStyle";
+import { useNavigate } from "react-router-dom";
+import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal";
+import { PrintReserveModal } from "../printReserveModal/printReserveModal";
 
 export interface carPrint {
   carType: string;
@@ -36,39 +36,35 @@ export interface ReserveProps {
 
 function formatDate(dateString: string) {
   const data = new Date(dateString);
-  const dia = String(data.getDate()).padStart(2, '0');
-  const mes = String(data.getMonth() + 1).padStart(2, '0'); // Note que os meses começam em 0 (janeiro é 0)
+  const dia = String(data.getDate()).padStart(2, "0");
+  const mes = String(data.getMonth() + 1).padStart(2, "0"); // Note que os meses começam em 0 (janeiro é 0)
   const ano = data.getFullYear();
-  const horas = String(data.getHours()).padStart(2, '0');
-  const minutos = String(data.getMinutes()).padStart(2, '0');
+  const horas = String(data.getHours()).padStart(2, "0");
+  const minutos = String(data.getMinutes()).padStart(2, "0");
 
   return `${dia}/${mes}/${ano} - ${horas}:${minutos}`;
 }
 
 export const Reserve: React.FC<ReserveProps> = (props: ReserveProps) => {
   const navigate = useNavigate();
-  const [printmodal, setPrintModal] = useState<boolean>(false);
-
-  useEffect(() => {}, [printmodal]);
 
   return (
     <ReserveStyle>
-      {printmodal && (
-        <PrintReserveModal
-          message='Teste'
-          messageButton='Teste'
-          carImage={props.image}
-          endDate={formatDate(props.reserve.endDate)}
-          startDate={formatDate(props.reserve.startDate)}
-          status={props.reserve.status}
-          totalCost={props.reserve.totalCost}
-          totalDays={props.reserve.totalDays}
-          id={props.reserve.carId}
-        />
-      )}
-      <div className='ReserveDetails'>
-        <img src={props.image} alt='' />
-        <div className='atributesOfReserve'>
+      <PrintReserveModal
+        message="Teste"
+        messageButton="Teste"
+        carImage={props.image}
+        endDate={formatDate(props.reserve.endDate)}
+        startDate={formatDate(props.reserve.startDate)}
+        status={props.reserve.status}
+        totalCost={props.reserve.totalCost}
+        totalDays={props.reserve.totalDays}
+        id={props.reserve.carId}
+      />
+
+      <div className="ReserveDetails">
+        <img src={props.image} alt="" />
+        <div className="atributesOfReserve">
           <p>
             <strong>Pick-up date:</strong> {formatDate(props.reserve.startDate)}
           </p>
@@ -89,20 +85,13 @@ export const Reserve: React.FC<ReserveProps> = (props: ReserveProps) => {
           </p>
         </div>
       </div>
-      <div className='ReserveButtons'>
+      <div className="ReserveButtons">
         <button
           onClick={(e) => {
             navigate(`/car/${props.reserve.carId}`);
           }}
         >
           View Car
-        </button>
-        <button
-          onClick={(e) => {
-            setPrintModal(true);
-          }}
-        >
-          Print Reserve
         </button>
         <button>Edit Reserve</button>
         <ConfirmDeleteModal

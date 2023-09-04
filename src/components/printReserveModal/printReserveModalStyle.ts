@@ -82,9 +82,25 @@ export const PrintReserveModalStyle = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-height: 750px;
+    width: 500px;
+    border: none;
+
+    h1{
+      font-size: 1.5rem;
+    }
+
+    h2{
+      font-size: 1.3rem;
+      margin: 0 0 5px 0;
+    }
+
+    .invoice-car{
+      gap: 0;
+    }
 
     .invoice {
-      gap: 0;
+      gap: 10px;
     }
 
     .invoice-details {
@@ -92,7 +108,7 @@ export const PrintReserveModalStyle = styled.div`
     }
 
     p {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .CarImage {
@@ -102,10 +118,40 @@ export const PrintReserveModalStyle = styled.div`
 
     .invoice-detailsContent {
       flex-flow: column wrap;
+      gap: 10px;
     }
 
     .invoice-details {
       flex-flow: column wrap;
     }
+
+    .Logo{
+      width: 200px;
+      height: 70px;
+    }
+
+    .QRCODE{
+      width: 100px;
+      height: 100px;
+    }
   }
 `;
+
+
+export const OpenModalButton = styled.button`
+
+    background-color: #fff;
+      border: solid #000 1px;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 3px 15px;
+      border-radius: 0 10px 0 10px;
+      font-weight: 700;
+      transition: all 200ms;
+
+:hover{color: #f33;
+      transform: scale(1.1);}
+    
+
+
+`
