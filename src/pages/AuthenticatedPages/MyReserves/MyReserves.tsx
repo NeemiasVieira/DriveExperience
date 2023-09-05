@@ -1,11 +1,11 @@
-import { Reserve } from '../../../components/Reserve/Reserve';
-import { MyReservesStyle } from './MyReservesStyle';
-import { Footer } from '../../../components/Footer/Footer';
-import { NavTabPrivatePages } from '../../../components/NavTabPrivatePages/NavTabPrivatePages';
-import { useState, useEffect } from 'react';
-import { getReserves } from '../../../assets/api/use-cases/reserves/getReserves';
-import { Loading } from '../../../components/Loading/Loading';
-import { Link } from 'react-router-dom';
+import { Reserve } from "../../../components/Reserve/Reserve";
+import { MyReservesStyle } from "./MyReservesStyle";
+import { Footer } from "../../../components/Footer/Footer";
+import { NavTabPrivatePages } from "../../../components/NavTabPrivatePages/NavTabPrivatePages";
+import { useState, useEffect } from "react";
+import { getReserves } from "../../../assets/api/use-cases/reserves/getReserves";
+import { Loading } from "../../../components/Loading/Loading";
+import { Link } from "react-router-dom";
 
 const MyReserves = () => {
   const [reserves, setReserves] = useState<any>([]);
@@ -31,7 +31,7 @@ const MyReserves = () => {
       <NavTabPrivatePages />
       <MyReservesStyle>
         <h1>My Reserves</h1>
-        <div className='cars'>
+        <div className="cars">
           {isLoading ? (
             <Loading />
           ) : (
@@ -39,8 +39,8 @@ const MyReserves = () => {
               {reserves.length > 0 ? (
                 <>
                   <h3>
-                    {reserves.length}{' '}
-                    {reserves.length === 1 ? 'result' : 'results'} found.
+                    {reserves.length}{" "}
+                    {reserves.length === 1 ? "result" : "results"} found.
                   </h3>
                   {reserves.map((reserve: any, index: number) => (
                     <Reserve
@@ -53,8 +53,10 @@ const MyReserves = () => {
                 </>
               ) : (
                 <>
-                  <p>You don't have any reserves.</p>
-                  <Link to='/create-reserve'>Reserve a Car Now</Link>
+                  <p className="noReserves">You don't have any reserves.</p>
+                  <div className="reserveLink">
+                    <Link to="/create-reserve">Reserve a Car Now</Link>
+                  </div>
                 </>
               )}
             </>

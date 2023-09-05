@@ -71,12 +71,26 @@ export const CreateCarStyle = styled.main`
     max-width: 95vw;
   }
 
+  .CarsAvailables{
+    margin: 10px 150px 10px 0;
+    align-self: flex-end;     
+  }
+
+  .titleSectionCars{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+  }
+
   .CarsDiv {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
     gap: 30px;
   }
+  
 
   label {
     font-weight: bold;

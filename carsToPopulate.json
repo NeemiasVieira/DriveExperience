@@ -8,9 +8,7 @@
     "color": "Gray",
     "fuelEfficiency": 25,
     "dailyRate": 90,
-    "images": [
-      "https://www.localiza.com/brasil-site/geral/Frota/HB2C.png"
-    ],
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/HB2C.png"],
     "features": ["Air Conditioning", "Power Windows", "Bluetooth"]
   },
   {
@@ -22,9 +20,7 @@
     "color": "Blue",
     "fuelEfficiency": 28,
     "dailyRate": 95,
-    "images": [
-      "https://www.localiza.com/brasil-site/geral/Frota/PEUA.png"
-    ],
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/PEUA.png"],
     "features": ["Air Conditioning", "Power Steering", "Cruise Control"]
   },
   {
@@ -36,9 +32,7 @@
     "color": "Red",
     "fuelEfficiency": 22,
     "dailyRate": 110,
-    "images": [
-      "https://www.localiza.com/brasil-site/geral/Frota/PLSE.png"
-    ],
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/PLSE.png"],
     "features": ["Air Conditioning", "Power Windows", "Touchscreen Display"]
   },
   {
@@ -50,9 +44,7 @@
     "color": "White",
     "fuelEfficiency": 23,
     "dailyRate": 120,
-    "images": [
-      "https://www.localiza.com/brasil-site/geral/Frota/CORO.png"
-    ],
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/CORO.png"],
     "features": ["Air Conditioning", "Navigation System", "Leather Seats"]
   },
   {
@@ -64,9 +56,7 @@
     "color": "Croma Black",
     "fuelEfficiency": 27,
     "dailyRate": 85,
-    "images": [
-      "https://www.localiza.com/brasil-site/geral/Frota/CROX.png"
-    ],
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/CROX.png"],
     "features": ["Air Conditioning", "Power Windows", "Keyless Entry"]
   },
   {
@@ -78,9 +68,79 @@
     "color": "Gray",
     "fuelEfficiency": 30,
     "dailyRate": 80,
-    "images": [
-      "https://www.localiza.com/brasil-site/geral/Frota/GOLC.png"
-    ],
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/GOLC.png"],
     "features": ["Air Conditioning", "Power Steering"]
-  }  
+  },
+  {
+    "model": "Fiat Toro 1.3 Turbo",
+    "plateNumber": "ZWA1784",
+    "year": 2023,
+    "isAutomatic": true,
+    "carType": "SUV",
+    "color": "Blue",
+    "fuelEfficiency": 20,
+    "dailyRate": 110,
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/TORA.png"],
+    "features": ["Air Conditioning", "Power Steering", "Bluetooth"]
+  },
+  {
+    "model": "Jeep Compass 1.3 Turbo",
+    "plateNumber": "CLE5278",
+    "year": 2023,
+    "isAutomatic": true,
+    "carType": "SUV",
+    "color": "Silver",
+    "fuelEfficiency": 22,
+    "dailyRate": 120,
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/COMP.png"],
+    "features": ["Air Conditioning", "Navigation System", "Leather Seats"]
+  },
+  {
+    "model": "GM Spin 1.8",
+    "plateNumber": "BLK9012",
+    "year": 2023,
+    "isAutomatic": false,
+    "carType": "MPV",
+    "color": "White",
+    "fuelEfficiency": 18,
+    "dailyRate": 90,
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/SPIX.png"],
+    "features": ["Air Conditioning", "Power Windows", "Keyless Entry"]
+  },
+  {
+    "model": "Audi A4 2.0 Turbo",
+    "plateNumber": "ZIK0820",
+    "year": 2023,
+    "isAutomatic": true,
+    "carType": "Sedan",
+    "color": "Gray",
+    "fuelEfficiency": 25,
+    "dailyRate": 150,
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/AUDB.png"],
+    "features": ["Air Conditioning", "Power Steering", "Sunroof"]
+  },
+  {
+    "model": "Fiat Fiorino 1.4",
+    "plateNumber": "APG7421",
+    "year": 2023,
+    "isAutomatic": false,
+    "carType": "Van",
+    "color": "White",
+    "fuelEfficiency": 15,
+    "dailyRate": 80,
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/FIFO.png"],
+    "features": ["Air Conditioning", "Power Windows"]
+  },
+  {
+    "model": "GM EQUINOX 1.5",
+    "plateNumber": "FEC3714",
+    "year": 2023,
+    "isAutomatic": true,
+    "carType": "SUV",
+    "color": "White",
+    "fuelEfficiency": 21,
+    "dailyRate": 130,
+    "images": ["https://www.localiza.com/brasil-site/geral/Frota/EQBL.png"],
+    "features": ["Air Conditioning", "Power Steering", "Touchscreen Display"]
+  }
 ]

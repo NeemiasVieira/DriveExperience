@@ -71,6 +71,20 @@ export const CarsNotAuthenticatedStyle = styled.main`
     max-width: 95vw;
   }
 
+  .titleSectionCars{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+  }
+
+  .CarsAvailables{
+    margin: 10px 150px 10px 0;
+    align-self: flex-end;
+     
+  }
+
   .CarsDiv {
     display: flex;
     justify-content: center;
