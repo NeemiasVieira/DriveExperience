@@ -88,13 +88,31 @@ const CarsNotAuthenticated = () => {
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const selectedDate = new Date(event.target.value);
+
+    // Get the local timezone offset in minutes
+    const offsetMinutes = selectedDate.getTimezoneOffset();
+
+    // Apply the offset to get the date and time in the local timezone
+    selectedDate.setMinutes(selectedDate.getMinutes() - offsetMinutes);
+
+    // Format the date and time
     const formattedDateTime = selectedDate.toISOString().slice(0, 16);
+
     setStartDate(formattedDateTime);
   };
 
   const handleEndDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedDate = new Date(event.target.value);
+
+    // Get the local timezone offset in minutes
+    const offsetMinutes = selectedDate.getTimezoneOffset();
+
+    // Apply the offset to get the date and time in the local timezone
+    selectedDate.setMinutes(selectedDate.getMinutes() - offsetMinutes);
+
+    // Format the date and time
     const formattedDateTime = selectedDate.toISOString().slice(0, 16);
+
     setEndDate(formattedDateTime);
   };
 

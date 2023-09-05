@@ -52,6 +52,7 @@ export const CarsNotAuthenticatedStyle = styled.main`
       margin: 0;
       border: none;
       cursor: pointer;
+      background-color: inherit;
     }
   }
 

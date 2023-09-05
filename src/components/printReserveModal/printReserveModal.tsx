@@ -1,13 +1,13 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import Modal, { Props } from "react-modal";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { PrintReserveModalStyle } from "./printReserveModalStyle";
-import { CarType } from "../Car/Car";
-import { findCarById } from "../../assets/api/use-cases/cars/findCarById";
-import Logo from "../../assets/imgs/Logo.png";
-import { OpenModalButton } from "./printReserveModalStyle";
-import { faPrint } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import Modal from 'react-modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { PrintReserveModalStyle } from './printReserveModalStyle';
+import { CarType } from '../Car/Car';
+import { findCarById } from '../../assets/api/use-cases/cars/findCarById';
+import Logo from '../../assets/imgs/Logo.png';
+import { OpenModalButton } from './printReserveModalStyle';
+import { faPrint } from '@fortawesome/free-solid-svg-icons';
 
 interface PrintReserveModalProps {
   message: string;
@@ -24,19 +24,19 @@ interface PrintReserveModalProps {
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "90vw",
-    height: "90vh",
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '90vw',
+    height: '90vh',
   },
 };
 
 export const PrintReserveModal: React.FC<PrintReserveModalProps> = (
-  props: PrintReserveModalProps
+  props: PrintReserveModalProps,
 ) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [car, setCar] = useState<CarType | any>();
@@ -69,7 +69,7 @@ export const PrintReserveModal: React.FC<PrintReserveModalProps> = (
 
   return (
     <>
-      <OpenModalButton onClick={openModal} className="openModal">
+      <OpenModalButton onClick={openModal} className='openModal'>
         <FontAwesomeIcon icon={faPrint} />
       </OpenModalButton>
       <Modal
@@ -82,12 +82,12 @@ export const PrintReserveModal: React.FC<PrintReserveModalProps> = (
           <h2>
             <strong>Status:</strong> {props.status}
           </h2>
-          <div className="invoice">
-            <div className="invoice-details">
-              <img src={props.carImage} alt="" className="CarImage" />
-              <div className="invoice-detailsContent">
-                <div className="invoice-car">
-                  <div className="invoice-carDetails">
+          <div className='invoice'>
+            <div className='invoice-details'>
+              <img src={props.carImage} alt='' className='CarImage' />
+              <div className='invoice-detailsContent'>
+                <div className='invoice-car'>
+                  <div className='invoice-carDetails'>
                     <h2>Vehicle Details</h2>
                     <p>
                       <strong>Model:</strong> {car?.model}
@@ -100,7 +100,7 @@ export const PrintReserveModal: React.FC<PrintReserveModalProps> = (
                     </p>
                     <p>
                       <strong>Transmission: </strong>
-                      {car?.isAutomatic ? "Automatic" : "Manual"}
+                      {car?.isAutomatic ? 'Automatic' : 'Manual'}
                     </p>
                     <p>
                       <strong>Type: </strong>
@@ -120,7 +120,7 @@ export const PrintReserveModal: React.FC<PrintReserveModalProps> = (
                   </div>
                 </div>
 
-                <div className="invoice-reservation">
+                <div className='invoice-reservation'>
                   <h2>Reservation Details</h2>
                   <p>
                     <strong>Pick-up Date:</strong> {props.startDate}
@@ -137,12 +137,12 @@ export const PrintReserveModal: React.FC<PrintReserveModalProps> = (
                 </div>
               </div>
             </div>
-            <div className="finalImages">
-              <img src={Logo} className="Logo"></img>
+            <div className='finalImages'>
+              <img src={Logo} className='Logo' alt='DriveXPerience Logo'></img>
               <img
-                src="https://img.freepik.com/vetores-premium/qr-de-isolado-no-icone-de-vetor-de-qrcode-branco_656810-475.jpg?w=2000"
-                alt=""
-                className="QRCODE"
+                src='https://img.freepik.com/vetores-premium/qr-de-isolado-no-icone-de-vetor-de-qrcode-branco_656810-475.jpg?w=2000'
+                alt='Reserve QR Code'
+                className='QRCODE'
               />
             </div>
           </div>

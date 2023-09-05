@@ -58,6 +58,13 @@ export const NavTabPrivatePagesStyle = styled.header`
     gap: 50px;
   }
 
+  .username {
+    position: fixed;
+    top: 1.5%;
+    right: 12%;
+    font-weight: 900;
+  }
+
   @media print {
     display: none;
   }

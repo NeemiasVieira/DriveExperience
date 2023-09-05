@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const NavTabPrivatePages = () => {
   const navigate = useNavigate();
+  const username = sessionStorage.getItem('username');
 
   return (
     <NavTabPrivatePagesStyle>
@@ -18,10 +19,12 @@ export const NavTabPrivatePages = () => {
             </li>
           </div>
           <li className='loginButton'>
+            {username && <li className='username'>{username}</li>}
             <button
               onClick={(e) => {
                 e.preventDefault();
                 sessionStorage.removeItem('token');
+                sessionStorage.removeItem('username');
                 navigate('/');
               }}
               className='logoutButton'
