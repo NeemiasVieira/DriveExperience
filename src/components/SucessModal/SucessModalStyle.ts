@@ -29,6 +29,7 @@ export const SucessModalStyle = styled.div`
     right: 5%;
     border: none;
     cursor: pointer;
+    background-color: inherit;
   }
 
   .actionButton {

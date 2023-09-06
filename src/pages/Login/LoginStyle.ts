@@ -87,4 +87,30 @@ export const LoginStyle = styled.main`
       }
     }
   }
+
+  @media screen and (max-width: 480px){
+    form{
+      max-width: 80vw;
+    }
+
+    section form button{
+      margin: 10px 0;
+    }
+
+  }
 `;
+
+
+export const InvisibleDiv = styled.div`
+
+  min-height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 480px){
+    min-height: 750px;
+  }
+
+
+`

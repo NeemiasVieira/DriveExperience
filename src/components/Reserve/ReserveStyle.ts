@@ -63,4 +63,29 @@ export const ReserveStyle = styled.div`
       display: none;
     }
   }
+
+  @media screen and (max-width: 480px){
+
+    width: 75vw;
+
+    .cars{
+      width: 90vw;
+    }
+
+    .ReserveDetails{
+      flex-flow: column wrap;
+    }
+
+    .ReserveButtons{
+
+    
+      
+    }
+
+
+    img{
+      width: 240px;
+      height: 130px;
+    }
+  }
 `;

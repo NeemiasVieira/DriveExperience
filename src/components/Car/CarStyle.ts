@@ -89,5 +89,12 @@ button:hover{
     transform: scale(1.1);
 }
 
+@media screen and (max-width: 480px){
+
+    .carDescription{
+        flex-flow: column wrap;
+    }
+
+}
 
 `

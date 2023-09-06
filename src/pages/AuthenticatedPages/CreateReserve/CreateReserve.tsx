@@ -61,7 +61,9 @@ const CreateCar = () => {
       const carsSection: HTMLElement = document.querySelector(
         ".Cars"
       ) as HTMLElement;
-      carsSection.style.display = "flex";
+      try {
+        carsSection.style.display = "flex";
+      } catch {}
     } else {
       console.log("A");
       await executeListAvailableCars(

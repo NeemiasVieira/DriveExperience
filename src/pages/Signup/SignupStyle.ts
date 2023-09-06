@@ -90,4 +90,16 @@ export const SignupStyle = styled.div`
       border-radius: 20px;
     }
   }
+
+  @media screen and (max-width: 480px){
+
+    min-height: 100vh;
+    .sectionImg{
+      display: none;
+    }
+
+    .sectionForm{
+      width: 100%;
+    }
+  }
 `;

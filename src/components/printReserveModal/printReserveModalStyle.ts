@@ -6,7 +6,7 @@ export const PrintReserveModalStyle = styled.div`
   align-items: center;
   flex-flow: column wrap;
   border: solid #000 1px;
-  padding: 50px;
+  padding: 30px;
   border-radius: 15px;
   gap: 20px;
 
@@ -135,6 +135,29 @@ export const PrintReserveModalStyle = styled.div`
       height: 100px;
     }
   }
+
+  @media screen and (max-width: 480px) {
+
+    gap: 0;
+
+    .invoice-details{
+      align-items: center;
+      flex-flow: column wrap;
+    }
+        .CarImage{
+          width: 240px;
+          height: 140px;
+        }
+        
+      }
+    p{
+      font-size: 1rem;
+    }
+
+    .QRCODE{
+      width: 100px;
+      height: 100px;
+    }
 `;
 
 
@@ -157,7 +180,6 @@ export const OpenModalButton = styled.button`
         color: #f33;
         
       }
-    
 
 
 `

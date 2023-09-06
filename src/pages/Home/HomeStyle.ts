@@ -83,4 +83,48 @@ export const HomeStyle = styled.main`
       }
     }
   }
+
+  @media screen and (max-width: 480px){
+
+    overflow-x: hidden;
+
+    .Introduction{
+      gap: 20px;
+      margin-top: 25px;
+      padding: 20px;
+      width: 80vw;
+
+      p{
+        font-size: .9rem;
+        width: 60vw;
+      }
+    }    
+
+    section{
+
+      flex-flow: column wrap;
+      height: 600px;
+
+    .welcome{
+      flex-flow: column wrap;
+      width: 100vw;
+      justify-content: flex-start;
+      margin-top: 180px;
+
+      h1{
+        font-size: 1.4rem;
+      }
+      h2{
+        font-size: 1.1rem;
+      }
+    }
+
+    .bgimage{
+      img{
+        display: none;
+      
+      }
+    }
+  }
+}
 `;

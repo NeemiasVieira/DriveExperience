@@ -46,4 +46,17 @@ export const NavTabStyle = styled.header`
         flex-flow: row nowrap;
         gap: 50px;
     }
+
+
+@media screen and (max-width: 480px){
+    .navDiv{
+        gap: 30px;
+
+    }
+
+    .loginButton{
+        right: 10%;
+    }
+}
+
 `

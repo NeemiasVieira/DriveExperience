@@ -107,4 +107,36 @@ export const CreateCarStyle = styled.main`
   br {
     margin: 10px 0;
   }
+
+  @media screen and (max-width: 480px){
+    .DivInputs{
+      max-width: 80vw;
+    }
+
+    .DivSearch{
+      width: 100%;
+
+      input{
+        width: 75%;
+      }
+    }
+
+    .DivInputDate{
+      width: 100%;
+
+      input{
+        min-width: 150px;
+      }
+
+
+      label{
+        display: none;
+      }
+
+    }
+    .CarsAvailables{
+      align-self: center;
+      margin: 20px 0 0 0;
+    }
+  }
 `;

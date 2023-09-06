@@ -68,4 +68,19 @@ export const NavTabPrivatePagesStyle = styled.header`
   @media print {
     display: none;
   }
+
+  @media screen and (max-width: 480px){
+    ul{
+      margin: 0 5px;
+    }
+
+    .navDiv{
+      gap: 20px;
+      font-size: 1rem;
+    }
+
+    .username{
+      display: none;
+    }
+  }
 `;

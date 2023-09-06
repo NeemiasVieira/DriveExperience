@@ -74,8 +74,6 @@ const CarsNotAuthenticated = () => {
       ) as HTMLElement;
       carsSection.style.display = "flex";
     }
-
-    if (error) console.log(error);
   };
 
   useEffect(() => {

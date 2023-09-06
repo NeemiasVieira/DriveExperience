@@ -38,7 +38,6 @@ export const FooterStyle = styled.footer`
     flex: 1;
     margin: 5px;
     margin-bottom: 30px;
-    max-width: auto;
   }
 
   h3 {
@@ -98,5 +97,23 @@ export const FooterStyle = styled.footer`
 
   @media print {
     display: none;
+  }
+
+  @media screen and (max-width: 480px){
+
+    .footer-content{
+      flex-flow: column wrap;
+      padding: 0;
+      gap: 5px;
+    }
+
+    p{
+      max-width: 75vw;
+      padding: 0;
+    }
+
+    .copyrights{
+      max-width: 90vw;
+    }
   }
 `;
