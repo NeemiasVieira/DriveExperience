@@ -8,6 +8,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { executeListAvailableCars } from "../../assets/api/use-cases/cars/listAvailableCars";
 
+export const diffInDays = (date1: string, date2: string): number => {
+  const date1Obj = new Date(date1);
+  const date2Obj = new Date(date2);
+  const diffInMilliseconds = Math.abs(date1Obj.getTime() - date2Obj.getTime());
+  let diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+  if (Math.floor(diffInDays) / diffInDays <= 0.9411764705882)
+    diffInDays = Math.ceil(diffInDays);
+  else diffInDays = Math.floor(diffInDays);
+  return diffInDays;
+};
+
 const CarsNotAuthenticated = () => {
   const [response, setResponse] = useState([]);
   const [error, setError] = useState();
@@ -169,7 +180,6 @@ const CarsNotAuthenticated = () => {
             />
           </div>
         </div>
-
         <section className="Cars">
           <div className="titleSectionCars">
             <h1>Cars Available</h1>
@@ -195,6 +205,10 @@ const CarsNotAuthenticated = () => {
                     isAuthenticated={false}
                     startDate={startDate}
                     endDate={endDate}
+                    diffInDays={diffInDays(
+                      startDate as string,
+                      endDate as string
+                    )}
                   />
                 ))
               )}

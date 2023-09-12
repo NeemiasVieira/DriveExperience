@@ -7,6 +7,7 @@ import { CarType } from "../../../components/Car/Car";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { executeListAvailableCars } from "../../../assets/api/use-cases/cars/listAvailableCars";
+import { diffInDays } from "../../CarsNotAuthenticated/CarsNotAuthenticated";
 
 const CreateCar = () => {
   const [response, setResponse] = useState([]);
@@ -200,6 +201,10 @@ const CreateCar = () => {
                     isAuthenticated={true}
                     startDate={startDate}
                     endDate={endDate}
+                    diffInDays={diffInDays(
+                      startDate as string,
+                      endDate as string
+                    )}
                   />
                 ))
               )}

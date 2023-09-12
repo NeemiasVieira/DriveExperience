@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { CarStyle } from './CarStyle';
-import { Link } from 'react-router-dom';
-import { executeCreateReserve } from '../../assets/api/use-cases/reserves/createReserve';
-import { SucessModal } from '../SucessModal/SucessModal';
-import { ErrorModal } from '../ErrorModal/errorModal';
+import React, { useState, useEffect } from "react";
+import { CarStyle } from "./CarStyle";
+import { Link } from "react-router-dom";
+import { executeCreateReserve } from "../../assets/api/use-cases/reserves/createReserve";
+import { SucessModal } from "../SucessModal/SucessModal";
+import { ErrorModal } from "../ErrorModal/errorModal";
+import ConfirmReserveModal from "../ConfirmReserveModal/ConfirmReserveModal";
+import { diffInDays } from "../../pages/CarsNotAuthenticated/CarsNotAuthenticated";
 
 export interface CarType {
   id: number;
@@ -24,6 +26,7 @@ export interface CarProps {
   isAuthenticated: boolean;
   startDate: string | Date;
   endDate: string | Date;
+  diffInDays: number;
 }
 
 export const Car: React.FC<CarProps> = (props: CarProps) => {
@@ -43,7 +46,7 @@ export const Car: React.FC<CarProps> = (props: CarProps) => {
       props.startDate,
       props.endDate,
       setResponse,
-      setError,
+      setError
     );
     setSucessModal(true);
   };
@@ -52,18 +55,18 @@ export const Car: React.FC<CarProps> = (props: CarProps) => {
     <CarStyle>
       {sucessmodal && (
         <SucessModal
-          message='Reserve created with sucess =)'
-          messageButton='Back'
+          message="Reserve created with sucess =)"
+          messageButton="Back"
         />
       )}
       {errormodal && (
         <ErrorModal
-          messages={error ? error.response.data.message : 'An error'}
+          messages={error ? error.response.data.message : "An error"}
         />
       )}
       <h2>{props.car.model}</h2>
       <img src={props.car.images[0]} alt="Car's images" />
-      <div className='carDescription'>
+      <div className="carDescription">
         <p>
           <strong>Year: </strong>
           {props.car.year}
@@ -73,33 +76,47 @@ export const Car: React.FC<CarProps> = (props: CarProps) => {
           {props.car.plateNumber}
         </p>
       </div>
-      <div className='carDescription'>
+      <div className="carDescription">
         <p>
           <strong>Transmission: </strong>
-          {props.car.isAutomatic ? 'Automatic' : 'Manual'}
+          {props.car.isAutomatic ? "Automatic" : "Manual"}
         </p>
         <p>
           <strong>Type: </strong>
           {props.car.carType}
         </p>
       </div>
-      <div className='carDescription'>
+      <div className="carDescription">
         <p>
           <strong>Fuel Efficiency: </strong>
           {props.car.fuelEfficiency} Km/L
         </p>
       </div>
       <p>
-        <strong>Features: </strong>Air Conditioning, GPS Navigation
+        <strong>Features: </strong>
+        {props.car.features.join(", ")}
       </p>
-      <h3>${props.car.dailyRate.toFixed(2)} per day</h3>
+      <p>
+        <strong>Price per day: </strong>${props.car.dailyRate.toFixed(2)}
+      </p>
+      <h3>${(props.car.dailyRate * props.diffInDays).toFixed(2)}</h3>
       {!props.isAuthenticated && (
-        <Link to='/login' className='reserveNowNoAuthenticated'>
+        <Link to="/login" className="reserveNowNoAuthenticated">
           Reserve Now
         </Link>
       )}
       {props.isAuthenticated && (
-        <button onClick={createReserve}>Rent now</button>
+        <ConfirmReserveModal
+          id={props.car.id}
+          startDate={props.startDate}
+          endDate={props.endDate}
+          car={props.car}
+          diffInDays={diffInDays(
+            props.startDate as string,
+            props.endDate as string
+          )}
+          reserveFunction={createReserve}
+        />
       )}
     </CarStyle>
   );

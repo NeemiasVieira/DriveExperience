@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { ReserveStyle } from './ReserveStyle';
-import { useNavigate } from 'react-router-dom';
-import ConfirmDeleteModal from '../ConfirmDeleteModal/ConfirmDeleteModal';
-import { PrintReserveModal } from '../printReserveModal/printReserveModal';
-import { EditReserveModal } from '../EditReserveModal/EditReserveModal';
+import React, { useState } from "react";
+import { ReserveStyle } from "./ReserveStyle";
+import { useNavigate } from "react-router-dom";
+import ConfirmDeleteModal from "../ConfirmDeleteModal/ConfirmDeleteModal";
+import { PrintReserveModal } from "../printReserveModal/printReserveModal";
+import { EditReserveModal } from "../EditReserveModal/EditReserveModal";
 
 export interface carPrint {
   carType: string;
@@ -35,15 +35,15 @@ export interface ReserveProps {
   car?: carPrint | any;
 }
 
-function formatDate(dateString: string) {
-  const data = new Date(dateString);
-  const dia = String(data.getDate()).padStart(2, '0');
-  const mes = String(data.getMonth() + 1).padStart(2, '0'); // Note que os meses começam em 0 (janeiro é 0)
-  const ano = data.getFullYear();
-  const horas = String(data.getHours()).padStart(2, '0');
-  const minutos = String(data.getMinutes()).padStart(2, '0');
+export function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Note que os meses começam em 0 (janeiro é 0)
+  const year = date.getFullYear();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
 
-  return `${dia}/${mes}/${ano} - ${horas}:${minutos}`;
+  return `${day}/${month}/${year} - ${hours}:${minutes}`;
 }
 
 export const Reserve: React.FC<ReserveProps> = (props: ReserveProps) => {
@@ -52,8 +52,8 @@ export const Reserve: React.FC<ReserveProps> = (props: ReserveProps) => {
   return (
     <ReserveStyle>
       <PrintReserveModal
-        message='Teste'
-        messageButton='Teste'
+        message="Teste"
+        messageButton="Teste"
         carImage={props.image}
         endDate={formatDate(props.reserve.endDate)}
         startDate={formatDate(props.reserve.startDate)}
@@ -63,9 +63,9 @@ export const Reserve: React.FC<ReserveProps> = (props: ReserveProps) => {
         id={props.reserve.carId}
       />
 
-      <div className='ReserveDetails'>
-        <img src={props.image} alt='' />
-        <div className='atributesOfReserve'>
+      <div className="ReserveDetails">
+        <img src={props.image} alt="" />
+        <div className="atributesOfReserve">
           <p>
             <strong>Pick-up date:</strong> {formatDate(props.reserve.startDate)}
           </p>
@@ -86,7 +86,7 @@ export const Reserve: React.FC<ReserveProps> = (props: ReserveProps) => {
           </p>
         </div>
       </div>
-      <div className='ReserveButtons'>
+      <div className="ReserveButtons">
         <button
           onClick={(e) => {
             navigate(`/car/${props.reserve.carId}`);
